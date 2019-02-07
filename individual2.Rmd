@@ -1,0 +1,25 @@
+---
+title: "individual2"
+author: "Sam Shifflett"
+date: "February 5, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+hist(choco$Rating)
+```
+This historgram shows a normal bell curve with the distribution of ratings for certain cocoas
+```{r}
+boxplot(choco$Rating)
+```
+This boxplot highlights the certain outliers within the data
+```{r}
+attach(choco)
+plot(choco$Cocoa.Pct, choco$Rating)
+```
+There is an aggregation of data withing the middle of the scatter plot meaning that the higher or lower the cocao percentage the lower the rating
