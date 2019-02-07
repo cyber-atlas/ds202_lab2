@@ -1,0 +1,41 @@
+---
+title: "lab2"
+author: "cyber-atlas"
+date: "February 5, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+head(choco)
+
+ratingHist <- hist(choco$Rating, xlab= "Rating", main="Frequency of Chocolate Ratings", border = 'red' )
+
+?hist
+?axis
+
+
+```
+
+The histogram is skewed left. It seems that the majority of chocolate was rated between 2.5 and 4. The outliers are the subpar chocolates, rated below a 2. 
+
+2 
+```{r}
+library(ggplot2)
+head(choco)
+#Making a scatter plot
+ggplot(choco, aes(x=choco$Cocoa.Pct, y=choco$Rating)) +
+  geom_point(shape=1) +
+  geom_smooth()
+  #geom_smooth(method=lm)
+
+#Shows us the number of ratings for each cocoa percent 
+ table(choco$Cocoa.Pct, choco$Rating)
+
+#TODO how to finish???
+ 
+```
