@@ -19,7 +19,9 @@ boxplot(choco$Rating)
 ```
 This boxplot highlights the certain outliers within the data
 ```{r}
-attach(choco)
-plot(choco$Cocoa.Pct, choco$Rating)
+library(ggplot2)
+ggplot(choco, aes(x=choco$Cocoa.Pct, y=choco$Rating))+
+    geom_point(shape=1) +    # Use hollow circles
+    geom_smooth(method=loess)            # Add a loess smoothed fit curve with confidence region
 ```
 There is an aggregation of data withing the middle of the scatter plot meaning that the higher or lower the cocao percentage the lower the rating
