@@ -16,10 +16,6 @@ head(choco)
 
 ratingHist <- hist(choco$Rating, xlab= "Rating", main="Frequency of Chocolate Ratings", border = 'red' )
 
-?hist
-?axis
-
-
 ```
 
 The histogram is skewed left. It seems that the majority of chocolate was rated between 2.5 and 4. The outliers are the subpar chocolates, rated below a 2. 
