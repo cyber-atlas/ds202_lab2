@@ -1,6 +1,6 @@
 ---
-title: "team"
-author: "cyber-atlas"
+title: "Team"
+author: "cyber-atlas, shiffy46"
 date: "February 11, 2019"
 output: html_document
 ---
@@ -54,7 +54,12 @@ boxplot(usa$Rating, france$Rating, canada$Rating, names=strTop3[1:3], ylab="Rati
 ```
 
 
-
+4)
+We wanted to see which bean origins had the best average ratings.
+```{r}
+stuff <- aggregate(Rating ~ Specific.Bean.Origin, data = choco, mean)
+head(stuff[order(-stuff$Rating),])
+```
 
 
 
