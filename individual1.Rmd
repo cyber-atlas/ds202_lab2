@@ -9,6 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+1
 ```{r}
 choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
 head(choco)
@@ -34,8 +35,10 @@ ggplot(choco, aes(x=choco$Cocoa.Pct, y=choco$Rating)) +
   #geom_smooth(method=lm)
 
 #Shows us the number of ratings for each cocoa percent 
- table(choco$Cocoa.Pct, choco$Rating)
-
-#TODO how to finish???
+#table(choco$Cocoa.Pct, choco$Rating)
  
 ```
+
+
+According to the data, ratings do depend on cocoa percentage. When the cocoa percentage is below 60% or greateer than 80% then the ratings start to decline. The 60%-80% range is where a majority of the highest ratings lie. It also appears to be the percentage range of cocoa that is most common, would would explain why there are more lower rated chocolates in it. The regression line above shows a decline as the percentages exit that range.
+
