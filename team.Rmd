@@ -49,7 +49,7 @@ usa<- choco[choco$Company.Location == "U.S.A.",]
 france<- choco[choco$Company.Location == "France",]
 canada<- choco[choco$Company.Location == "Canada",]
 
-boxplot(usa$Rating, france$Rating, canada$Rating, names=strTop3[1:3], ylab="Rating", main="Rating Distributions by Country", col = c("red", "green", "Gold"))
+boxplot(usa$Rating, france$Rating, canada$Rating, names=strTop3[1:3], ylab="Rating", xlab="Country", main="Rating Distributions by Country", col = c("red", "green", "Gold"))
 
 ```
 
