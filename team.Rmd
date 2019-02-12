@@ -53,15 +53,31 @@ boxplot(usa$Rating, france$Rating, canada$Rating, names=strTop3[1:3], ylab="Rati
 
 ```
 
+We see that all 3 countries have the same median rating. The distribution of Canada and USA are about the same, while France has a much smaller distribution. USA only has 1 lower outlier, France has 2, and Canada has none. 
+
 
 4)
-We wanted to see which bean origins had the best average ratings.
+We wanted to find the distribution of the 10 specific bean origins based on average ratings.
+
 ```{r}
-stuff <- aggregate(Rating ~ Specific.Bean.Origin, data = choco, mean)
-head(stuff[order(-stuff$Rating),])
+originData<- aggregate(Rating ~ Specific.Bean.Origin, data = choco, mean)
+#head(originData[order(-originData$Rating),])
+originData <- head(originData[order(-originData$Rating),], 10)
+originData
+
+#ggplot(data=originData, aes(x=originData$Specific.Bean.Origin, y=originData$Rating))+geom_histogram(stat = "identity")+coord_cartesian(ylim=c(3.85,4.3))+ylab("Rating")+xlab("Specific Bean Origin")
+
+#Plot a histogram of the ratings and origin
+ggplot(data=originData, aes(x=originData$Specific.Bean.Origin, y=originData$Rating))+
+  geom_histogram(stat = "identity")+
+  coord_flip()+
+  ylab("Rating")+
+  xlab("Specific Bean Origin")
+
+
 ```
 
 
-
+We found that 9 out of the top 10 specific origins are the same average rating at 4.0. This could be due to a lack of ratings or being of similar quality.  
 
 
